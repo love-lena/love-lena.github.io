@@ -17,7 +17,7 @@ title: "I'm Lena. Hi there."
 email: 'me@lena.dev'
 description: "I'm a Software Developer and Computer Engineer in California. Currently finishing my undergrad at UCSC."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://lena.dev" # the base hostname & protocol for your site, e.g. https://example.com
+url: "love.lena.dev" # the base hostname & protocol for your site, e.g. https://example.com
 twitter_username: 'love_lena_dev'
 github_username: 'love-lena'
 medium_username: ''
