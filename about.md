@@ -10,4 +10,6 @@ permalink: /about/
 
 ...is a static site built using [Jekyll](http://jekyllrb.com/).
 
+...has source code [here](https://github.com/love-lena/love-lena.github.io).
+
 ...was made with ♥.
