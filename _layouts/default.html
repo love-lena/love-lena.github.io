@@ -1,13 +1,103 @@
-{% include header.html %}
+<!DOCTYPE html>
+<html lang="en">
 
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    {% include post-content.html %}
-                </div>
-            </div>
-        </div>
-    </main>
+{% include head.html %}
 
-{% include footer.html %}
+<body>
+
+  <div class="row">
+    <div class="large-12 large-centered columns">
+
+      <header class="masthead">
+        <img src="{{ site.baseurl }}/public/profile.png" alt="Lena Icon">
+      </header>
+
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="large-6 large-offset-3 columns">
+
+      <div class="content-section">
+
+        <p>
+          Hi! I’m Lena and I'm a Software Developer and Computer Engineer in California.
+          I am currently finishing my undergrad at UCSC.
+        </p>
+
+      </div>
+
+      <main>
+        <h2>Latest Work</h2>
+        {% for post in site.posts %}
+          <div class="project-post">
+            <h3><a href="{{ post.site }}">{{ post.title }}</a></h3>
+
+            {{ post.content }}
+
+            <ul>
+              <li><a href="{{ post.git }}"><i class="fa fa-github"></i></a></li>
+              {% if post.site %}
+              <li><a href="{{ post.site }}"><i class="fa fa-link"></i></a></li>
+              {% endif %}
+            </ul>
+
+            <hr />
+          </div>
+        {% endfor %}
+      </main>
+
+      <footer>
+        <h2>Get In Touch!</h2>
+
+        <p>
+          Send me an
+          <a href="mailto:me@lena.dev?Subject=Hello,%20Lena!">email</a> or ping me on
+          <a href="https://twitter.com/love_lena_dev">Twitter</a>. I’m also on
+          <a href="https://github.com/love-lena">Github</a>, and
+          <a href="https://www.linkedin.com/in/lena-hickson-long-929403201/">
+            Linkedin</a>.
+        </p>
+
+        <p class="copyright">
+          <!-- &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. -->
+          This site is a Jekyll template developed by the fantastic Jami Gibbs and it's licensed MIT. You can check it out
+          <a href="https://github.com/jamigibbs/portfolio">here</a>!
+        </p>
+      </footer>
+
+    </div>
+
+    <div class="large-2 large-offset-1 columns social">
+      <ul>
+        <li>
+          <a href="https://github.com/{{ site.github }}">
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/{{ site.twitter }}">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  {% if site.google_analytics %}
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', '{{ site.google_analytics }}', 'auto');
+    ga('send', 'pageview');
+  </script> {% endif %}
+
+</body>
+
+</html>
