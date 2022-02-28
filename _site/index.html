@@ -46,11 +46,45 @@
         <h2>Latest Work</h2>
         
           <div class="project-post">
+            <h3><a href="">TensorFlow Lite experiments</a></h3>
+
+            <p>I had a lab assignment in an embedded systems class that I thought was a good opportunity to check out <a href="https://www.tensorflow.org/lite">TF Lite</a>.</p>
+
+<p>Given some sample of voltage, determine the frequency of a sine wave signal.</p>
+
+<p>I started by exploring the data measured by my microcontroller and generating some sine waves with gaussian noise. This let me create thousands of training samples very quick.</p>
+
+<p><img src="/public/exploration.png" alt="exploration" /></p>
+
+<p>I tried out a few different models, and I found that adding more dense layers helped with prediction accuracy, but was very expensive in terms of model size. Ultimately, I went with two dense layers with 32 neurons each.</p>
+
+<p>Looking at some tests runs, we can see that the model performs reasonably well.</p>
+
+<p><img src="/public/run.png" alt="predictions" /></p>
+
+<p>To prepare the model for an embedded deployment, I convert it to a Lite model (250kb → 40kb) and quantize it (40kb → 10kb). Even at 4% the size, the new model performs well.</p>
+
+<p><img src="/public/literun.png" alt="lite predictions" /></p>
+
+
+
+            <ul>
+              <li><a href="https://github.com/rapidsai/node"><i class="fa fa-github"></i></a></li>
+              
+            </ul>
+
+            <hr />
+          </div>
+        
+          <div class="project-post">
             <h3><a href="">Big data in the browser (NVIDIA)</a></h3>
 
-            <p><img src="/public/prettymap.gif" alt="pretty map" /></p>
+            <video autoplay="" loop="" muted="" playsinline="">
+  <source src="/public/prettymap.webm" type="video/webm" />
+  <source src="/public/prettymap.mp4" type="video/mp4" />
+</video>
 
-<p>Over the summer of 2021, I interned on the NVIDIA Rapids Data Viz team. My favorite thing I made over there was a simple website that let you interact with a dataset stored on the GPU. While things like <a href="https://deck.gl/">deck.gl</a> have let you leverage the GPU from the browser for a while now, we enabled the use of CUDA data structures straight from the browser. This eliminated the constraint of needing to store datasets in the browser, which allows for working with billions of points at once. The gif above shows this on a graph with so many edges you can’t even see the background.</p>
+<p>Over the summer of 2021, I interned on the NVIDIA Rapids Data Viz team. My favorite thing I made over there was a simple website that lets you interact with a dataset stored on the GPU. While things like <a href="https://deck.gl/">deck.gl</a> have let you leverage the GPU from the browser for a while now, we enabled the use of CUDA data structures straight from the browser. This means we can work with billions of points at once. The video above shows this on a graph with so many edges you can’t even see the background.</p>
 
 
             <ul>
@@ -78,7 +112,7 @@
         </p>
 
         <p class="copyright">
-          <!-- &copy; <time datetime="2022-02-19T23:19:33-08:00">2022</time>. -->
+          <!-- &copy; <time datetime="2022-02-27T23:54:55-08:00">2022</time>. -->
           This site is a Jekyll template developed by the fantastic Jami Gibbs and it's licensed MIT. You can check it out
           <a href="https://github.com/jamigibbs/portfolio">here</a>!
         </p>

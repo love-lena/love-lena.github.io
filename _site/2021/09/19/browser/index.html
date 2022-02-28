@@ -7,7 +7,7 @@
 
   <title>
     
-      404: Page not found &middot; Lena Hickson Long
+      Big data in the browser (NVIDIA) &middot; Lena Hickson Long
     
   </title>
 
@@ -48,23 +48,24 @@
           <div class="project-post">
             <h3><a href="">TensorFlow Lite experiments</a></h3>
 
-            <p>I had a lab assignment in an embedded systems class that I thought was a good opportunity to check out <a href="https://www.tensorflow.org/lite">TF Lite</a>.</p>
+            I had a lab assignment in an embedded systems class that I thought was a good opportunity to check out [TF Lite](https://www.tensorflow.org/lite). 
 
-<p>Given some sample of voltage, determine the frequency of a sine wave signal.</p>
+Given some sample of voltage, determine the frequency of a sine wave signal.
 
-<p>I started by exploring the data measured by my microcontroller and generating some sine waves with gaussian noise. This let me create thousands of training samples very quick.</p>
+I started by exploring the data measured by my microcontroller and generating some sine waves with gaussian noise. This let me create thousands of training samples very quick.
 
-<p><img src="/public/exploration.png" alt="exploration" /></p>
+<img src="{{ site.baseurl }}/public/exploration.png" alt="exploration">
 
-<p>I tried out a few different models, and I found that adding more dense layers helped with prediction accuracy, but was very expensive in terms of model size. Ultimately, I went with two dense layers with 32 neurons each.</p>
+I tried out a few different models, and I found that adding more dense layers helped with prediction accuracy, but was very expensive in terms of model size. Ultimately, I went with two dense layers with 32 neurons each.
 
-<p>Looking at some tests runs, we can see that the model performs reasonably well.</p>
+Looking at some tests runs, we can see that the model performs reasonably well.
 
-<p><img src="/public/run.png" alt="predictions" /></p>
+<img src="{{ site.baseurl }}/public/run.png" alt="predictions">
 
-<p>To prepare the model for an embedded deployment, I convert it to a Lite model (250kb → 40kb) and quantize it (40kb → 10kb). Even at 4% the size, the new model performs well.</p>
+To prepare the model for an embedded deployment, I convert it to a Lite model (250kb → 40kb) and quantize it (40kb → 10kb). Even at 4% the size, the new model performs well.
 
-<p><img src="/public/literun.png" alt="lite predictions" /></p>
+<img src="{{ site.baseurl }}/public/literun.png" alt="lite predictions">
+
 
 
 
