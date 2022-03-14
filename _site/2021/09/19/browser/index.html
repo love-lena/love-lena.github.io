@@ -46,6 +46,52 @@
         <h2>Latest Work</h2>
         
           <div class="project-post">
+            <h3><a href="">Vending Machine Network</a></h3>
+
+            My engineering capstone project at UCSC is building a connected vending machine. The "vending machine" part isn't that important to what I want to talk about here. I want to focus on my approach to designing and implementing a scalable IoT service.
+
+<img src="{{ site.baseurl }}/public/svmstack.png" alt="tech stack">
+
+The basis of this whole thing will be [fastify](https://www.fastify.io/), a really fast web framework that I have been enjoying. One of its main selling points is how bare bones it is. You can pull in functionality via plugins exactly when you need it. 
+
+The IoT component will be [MQTT](https://mqtt.org/), a standard in IoT for good reason. The publisher/subscriber model is great for managing many devices that may disconnect or drop messages. 
+I used [oracle mosquitto](https://mosquitto.org/), since it's pretty easy to setup and I wanted to use a self hosted broker.
+
+The front end is a static web app powered by [Vue](https://vuejs.org/).
+
+I have this all running in AWS, which is my go to when standing up a web service. The only AWS exclusive tool I am using is [DynamoDB](https://aws.amazon.com/dynamodb/), but you could switch it out with [MongoDB](https://www.mongodb.com/) without too much work. 
+
+The only big structural change needed now would be putting everything behind a proxy. Once that is in place, this whole thing is highly scalable and pretty damn fast.
+
+
+            <ul>
+              <li><a href="https://github.com/svm-ucsc/smart-vending-API"><i class="fa fa-github"></i></a></li>
+              
+            </ul>
+
+            <hr />
+          </div>
+        
+          <div class="project-post">
+            <h3><a href="https://www.npmjs.com/package/fastify-mqtt">Fastify MQTT plugin</a></h3>
+
+            A small plugin for fastify that allows you to share the same MQTT connection in all parts of your server.
+
+Published on npm, you can use it in your fastify project with
+
+`npm i fastify-mqtt`
+
+            <ul>
+              <li><a href="https://github.com/love-lena/fastify-mqtt"><i class="fa fa-github"></i></a></li>
+              
+              <li><a href="https://www.npmjs.com/package/fastify-mqtt"><i class="fa fa-link"></i></a></li>
+              
+            </ul>
+
+            <hr />
+          </div>
+        
+          <div class="project-post">
             <h3><a href="">TensorFlow Lite experiments</a></h3>
 
             I had a lab assignment in an embedded systems class that I thought was a good opportunity to check out [TF Lite](https://www.tensorflow.org/lite). 
@@ -113,7 +159,7 @@ To prepare the model for an embedded deployment, I convert it to a Lite model (2
         </p>
 
         <p class="copyright">
-          <!-- &copy; <time datetime="2022-03-01T22:46:47-08:00">2022</time>. -->
+          <!-- &copy; <time datetime="2022-03-13T20:10:34-07:00">2022</time>. -->
           This site is a Jekyll template developed by the fantastic Jami Gibbs and it's licensed MIT. You can check it out
           <a href="https://github.com/jamigibbs/portfolio">here</a>!
         </p>

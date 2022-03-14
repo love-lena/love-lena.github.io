@@ -7,7 +7,7 @@
 
   <title>
     
-      Lena Hickson Long &middot; Software/Computer Engineer from California.
+      Fastify MQTT plugin &middot; Lena Hickson Long
     
   </title>
 
@@ -48,20 +48,20 @@
           <div class="project-post">
             <h3><a href="">Vending Machine Network</a></h3>
 
-            <p>My engineering capstone project at UCSC is building a connected vending machine. The “vending machine” part isn’t that important to what I want to talk about here. I want to focus on my approach to designing and implementing a scalable IoT service.</p>
+            My engineering capstone project at UCSC is building a connected vending machine. The "vending machine" part isn't that important to what I want to talk about here. I want to focus on my approach to designing and implementing a scalable IoT service.
 
-<p><img src="/public/svmstack.png" alt="tech stack" /></p>
+<img src="{{ site.baseurl }}/public/svmstack.png" alt="tech stack">
 
-<p>The basis of this whole thing will be <a href="https://www.fastify.io/">fastify</a>, a really fast web framework that I have been enjoying. One of its main selling points is how bare bones it is. You can pull in functionality via plugins exactly when you need it.</p>
+The basis of this whole thing will be [fastify](https://www.fastify.io/), a really fast web framework that I have been enjoying. One of its main selling points is how bare bones it is. You can pull in functionality via plugins exactly when you need it. 
 
-<p>The IoT component will be <a href="https://mqtt.org/">MQTT</a>, a standard in IoT for good reason. The publisher/subscriber model is great for managing many devices that may disconnect or drop messages. 
-I used <a href="https://mosquitto.org/">oracle mosquitto</a>, since it’s pretty easy to setup and I wanted to use a self hosted broker.</p>
+The IoT component will be [MQTT](https://mqtt.org/), a standard in IoT for good reason. The publisher/subscriber model is great for managing many devices that may disconnect or drop messages. 
+I used [oracle mosquitto](https://mosquitto.org/), since it's pretty easy to setup and I wanted to use a self hosted broker.
 
-<p>The front end is a static web app powered by <a href="https://vuejs.org/">Vue</a>.</p>
+The front end is a static web app powered by [Vue](https://vuejs.org/).
 
-<p>I have this all running in AWS, which is my go to when standing up a web service. The only AWS exclusive tool I am using is <a href="https://aws.amazon.com/dynamodb/">DynamoDB</a>, but you could switch it out with <a href="https://www.mongodb.com/">MongoDB</a> without too much work.</p>
+I have this all running in AWS, which is my go to when standing up a web service. The only AWS exclusive tool I am using is [DynamoDB](https://aws.amazon.com/dynamodb/), but you could switch it out with [MongoDB](https://www.mongodb.com/) without too much work. 
 
-<p>The only big structural change needed now would be putting everything behind a proxy. Once that is in place, this whole thing is highly scalable and pretty damn fast.</p>
+The only big structural change needed now would be putting everything behind a proxy. Once that is in place, this whole thing is highly scalable and pretty damn fast.
 
 
             <ul>
