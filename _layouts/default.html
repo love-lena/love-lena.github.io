@@ -23,29 +23,29 @@
 
         <p>
           Hi, I'm Lena! I'm a Software Engineer in California.
-          Working at <a href="https://www.cultureamp.com/">Culture Amp</a> as a Backend Engineer.<br>
+          Currently working at Discord.<br>
         </p>
 
       </div>
 
       <main>
-        <h2>Latest Work</h2>
-        {% for post in site.posts %}
-          <div class="project-post">
-            <h3><a href="{{ post.site }}">{{ post.title }}</a></h3>
-
-            {{ post.content }}
-
-            <ul>
-              <li><a href="{{ post.git }}"><i class="fa fa-github"></i></a></li>
-              {% if post.site %}
-              <li><a href="{{ post.site }}"><i class="fa fa-link"></i></a></li>
-              {% endif %}
-            </ul>
-
-            <hr />
-          </div>
-        {% endfor %}
+        <!-- <h2>Latest Work</h2> -->
+        <!-- {% for post in site.posts %} -->
+        <!--   <div class="project-post"> -->
+        <!--     <h3><a href="{{ post.site }}">{{ post.title }}</a></h3> -->
+        <!---->
+        <!--     {{ post.content }} -->
+        <!---->
+        <!--     <ul> -->
+        <!--       <li><a href="{{ post.git }}"><i class="fa fa-github"></i></a></li> -->
+        <!--       {% if post.site %} -->
+        <!--       <li><a href="{{ post.site }}"><i class="fa fa-link"></i></a></li> -->
+        <!--       {% endif %} -->
+        <!--     </ul> -->
+        <!---->
+        <!--     <hr /> -->
+        <!--   </div> -->
+        <!-- {% endfor %} -->
       </main>
 
       <footer>
@@ -62,7 +62,7 @@
 
         <p class="copyright">
           <!-- &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time>. -->
-          This site is a Jekyll template developed by the fantastic Jami Gibbs and it's licensed MIT. You can check it out
+          This site is a Jekyll template developed by Jami Gibbs and it's licensed MIT. You can check it out
           <a href="https://github.com/jamigibbs/portfolio">here</a>!
         </p>
       </footer>
