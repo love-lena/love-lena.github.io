@@ -1,34 +1,15 @@
-# Permalinks
-permalink:           pretty
+title: Lena Hickson Long
+tagline: Software engineer in California
+description: Personal site and blog of Lena Hickson Long.
+url: https://lena.dev
+permalink: pretty
 
-# Setup
-title:               Lena Hickson Long
-tagline:             Software/Computer Engineer from California.
-url:                 http://lena.dev
-paginate:            1
-baseurl:             ""
-
-# Assets
-#
-# We specify the directory for Jekyll so we can use @imports.
-sass:
-  sass_dir:          _sass
-  style:            :compressed
-
-# About/contact
 author:
-  name:              Lena Hickson Long
-  url:               https://twitter.com/love_lena_dev
-  email:             me@lena.dev
+  name: Lena Hickson Long
+  email: web@lena.dev
 
-# Custom vars
-version:             2.0.1
-github:
-  repo:              https://github.com/love-lena/love-lena.github.io
-twitter:             love_lena_dev
-github:              love-lena
+github_username: love-lena
 
-# Gems
-plugins:
-  # - jekyll-paginate
-  # - jekyll-gist
+sass:
+  sass_dir: _sass
+  style: compressed
