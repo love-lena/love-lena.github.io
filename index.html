@@ -1,33 +1,25 @@
 ---
 layout: default
-title: Home
+title: Lena Hickson Long
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <article class="post">
-    <h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<section class="about">
+  <h1>Lena Hickson Long</h1>
+  <p>Software engineer in California, currently at Discord.</p>
+  <p class="links">
+    <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+    <a href="https://www.linkedin.com/in/lena-hickson-long-929403201/">LinkedIn</a>
+    <a href="mailto:{{ site.author.email }}">Email</a>
+    <a href="{{ '/atom.xml' | relative_url }}">RSS</a>
+  </p>
+</section>
 
-    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
-
-    {{ post.content }}
-  </article>
+<h2>Posts</h2>
+<ul class="posts">
+  {% for post in site.posts %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
   {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+</ul>
