@@ -13,3 +13,10 @@ github_username: love-lena
 sass:
   sass_dir: _sass
   style: compressed
+
+exclude:
+  - docs
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - README.md
