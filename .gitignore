@@ -8,3 +8,5 @@ _site/
 vendor/
 # Local-only planning docs
 docs/superpowers/
+# Drafts (require `jekyll serve --drafts` to preview)
+_drafts/
