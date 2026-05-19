@@ -1,33 +1,42 @@
 ---
 layout: default
-title: Home
+title: lena.dev
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <article class="post">
-    <h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
+<section class="about">
+  <img class="about__avatar" src="{{ '/public/profile.png' | relative_url }}" alt="Lena Hickson Long" width="72" height="72">
+  <div class="about__text">
+    <h1>lena.dev</h1>
+    <p>Software engineer in California, currently at Discord.</p>
+    <p class="links">
+      <a href="https://github.com/{{ site.github_username }}">GitHub</a>
+      <a href="https://www.linkedin.com/in/lena-hickson-long-929403201/">LinkedIn</a>
+      <a href="mailto:{{ site.author.email }}">Email</a>
+      <a href="{{ '/atom.xml' | relative_url }}">RSS</a>
+    </p>
+  </div>
+</section>
 
-    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
-
-    {{ post.content }}
-  </article>
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+{% assign cutoff = site.time | date: '%Y' | minus: 2 | append: '-01-01' %}
+{% assign recent = '' | split: '' %}
+{% assign archive = '' | split: '' %}
+{% for post in site.posts %}
+  {% assign pd = post.date | date: '%Y-%m-%d' %}
+  {% if pd >= cutoff %}
+    {% assign recent = recent | push: post %}
   {% else %}
-    <span class="pagination-item older">Older</span>
+    {% assign archive = archive | push: post %}
   {% endif %}
-  {% if paginator.previous_page %}
-    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
+{% endfor %}
+
+{% if recent.size > 0 %}
+<h2>Blog posts</h2>
+{% include post-list.html posts=recent %}
+{% endif %}
+
+{% if archive.size > 0 %}
+<details class="archive">
+  <summary><h2>Archive</h2></summary>
+  {% include post-list.html posts=archive %}
+</details>
+{% endif %}
